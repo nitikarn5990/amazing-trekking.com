@@ -1,0 +1,5 @@
+
+img { border: none; }
+.bordered { border:1px solid #aaa; width:210px; margin:10px;}
+textarea { background:#ccc; color:#333; border:1px solid #aaa; }
+#content { width:1000px;  margin-left:auto; margin-right:auto; padding:10px; }
