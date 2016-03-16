@@ -76,7 +76,7 @@ if ($_POST['submit_bt'] == 'Post Comment') {
 ?>
 
 <div id="content">
- 
+
     <?php
     // Report errors to the user
     Alert(GetAlert('error'));
@@ -89,10 +89,10 @@ if ($_POST['submit_bt'] == 'Post Comment') {
     $query1 = $db->Query($sql1);
     $numRow1 = $db->NumRows($query1);
     if ($numRow1 > 0) {
-   
+
         while ($row1 = $db->FetchArray($query1)) {
             ?>
-   
+         
             <?php
             $numRow1--;
         }
@@ -102,12 +102,12 @@ if ($_POST['submit_bt'] == 'Post Comment') {
     <!-- pagination -->
 
     <?php
-    $strSQL = "SELECT * FROM " . $guestbook->getTbl() . "  ORDER BY id DESC";
- 
+    $strSQL = "SELECT * FROM " . $guestbook->getTbl() ;
+
     $objQuery = $db->Query($strSQL);
     $Num_Rows = $db->NumRows($objQuery);
 
-    $Per_Page = 10;   // Per Page
+    $Per_Page = 1;   // Per Page
 
     $Page = $_GET["Page"];
     if (!$_GET["Page"]) {
@@ -131,14 +131,36 @@ if ($_POST['submit_bt'] == 'Post Comment') {
     $objQuery = mysql_query($strSQL);
     ?>
 
-<?php
-while ($objResult = $db->FetchArray($objQuery)) {
-    ?>
-         
-            <?php
-        }
+    <?php
+    while ($objResult = $db->FetchArray($objQuery)) {
         ?>
-    
+     <div class="comment-box">
+
+                <p class="comment-number"><b>Comment #<?= $Num_Rows--; ?></b></p>
+                <div class="clear"></div>
+                <div class="comment-name"> <?= $objResult['name'] ?> </div>
+                <p class="comment-date">  <?= $functions->ShowDay($objResult['created_at']) . ',' . $functions->ShowDateEngTime($objResult['created_at']) ?></p>
+                <p class="comment-title"> <?= $objResult['title'] ?></p>
+                <div  style=" padding: 10px;">
+                    <p class="comment-detail">
+                    <ul>
+                        <li>
+                            <?= $objResult['comment'] ?>
+                        </li>
+                        <?php if ($objResult['image'] != '') { ?>
+                            <li>
+                                <img src="<?= ADDRESS ?>img/<?= $objResult['image'] ?>" style="max-width: 100%;">
+                            </li>       
+                        <?php } ?>
+                    </ul>
+                    <p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        <?php
+    }
+    ?>
+
 
     <div style="font-weight:bold;">
         <br>
