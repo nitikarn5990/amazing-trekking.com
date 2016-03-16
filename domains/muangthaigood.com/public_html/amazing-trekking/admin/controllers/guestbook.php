@@ -218,7 +218,7 @@ if ($_GET['id'] != '' && $_GET['action'] == 'del') {
                                 <label class="da-form-label">ไฟล์ที่อัพโหลด</label>
                                 <div class="da-form-item large">
                                     <?php if ($guestbook->GetPrimary() != '') { ?>
-                                        <?php if ($guestbook->GetValue('image') != ''){  ?>
+                                        <?php if ($guestbook->GetValue('image') != ""){  ?>
                                         <img src="<?= ADDRESS ?>img/<?= $guestbook->GetValue('image') ?>" style="max-width: 100%;">
                                     <?php } ?>
                                 <?php } ?>

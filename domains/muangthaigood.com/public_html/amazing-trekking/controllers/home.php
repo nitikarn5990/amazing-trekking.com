@@ -1,40 +1,29 @@
 <div id="content">
-    <h1>This  Amazing  private  tour</h1>
-    <p>Our business is a small, employee-owned and operated trekking company.  Our goal is to 
-        provide an experience of the highest quality and standard, giving you the absolute best 
-        value for your money.</p>
-    <p>We take immense pleasure and pride in trekking the path less traveled by.  Our path takes
-        through the jungle to swim under picturesque waterfalls, soak in tranquil hot springs, dine
-        sleep in the peaceful villages of the Karen and Lahu tribes, bamboo raft down gentle river
-        interact with majestic elephants, and even visit an orchid (<a href="">Click to read more</a>)</p>
-    <div class="review">
-        <div class="imgreview"><img src="../images/imgreview1.jpg" /></div>
-        <div class="txtreview">
-            <p class="colorreview">Good Experience /  <a href="" style=" vertical-align:top; margin:0 0 0 10px;">Guestbook</a></p>
-            <p class="txtnamereview">Tomas and Jne</p>
-            <p>Our business is a small, employee-owned and operated trekking company.  Our goal is to 
-                provide an experience</p>
-        </div> 
-        <div class="clear"></div>
-    </div>
-    <div class="review">
-        <div class="imgreview"><img src="../images/imgreview1.jpg" /></div>
-        <div class="txtreview">
-            <p class="colorreview">Good Experience /  <a href="" style=" vertical-align:top; margin:0 0 0 10px;">Guestbook</a></p>
-            <p class="txtnamereview">Tomas and Jne</p>
-            <p>Our business is a small, employee-owned and operated trekking company.  Our goal is to 
-                provide an experience</p>
-        </div> 
-        <div class="clear"></div>
-    </div>
-    <div class="review">
-        <div class="imgreview"><img src="images/imgreview1.jpg" /></div>
-        <div class="txtreview">
-            <p class="colorreview">Good Experience /  <a href="" style=" vertical-align:top; margin:0 0 0 10px;">Guestbook</a></p>
-            <p class="txtnamereview">Tomas and Jne</p>
-            <p>Our business is a small, employee-owned and operated trekking company.  Our goal is to 
-                provide an experience</p>
-        </div> 
-        <div class="clear"></div>
-    </div>
+    <h1><?=$home->getDataDesc('home_title','id = 1');?></h1>
+    <?=$home->getDataDesc('home_shortdetail','id = 1');?>
+
+    <?php
+    $sql1 = "SELECT * FROM " . $guestbook->getTbl() . " WHERE comment_show_home = 'on' ORDER BY id ASC";
+    $query1 = $db->Query($sql1);
+    $numRow1 = $db->NumRows($query1);
+    if ($numRow1 > 0) {
+
+        while ($row1 = $db->FetchArray($query1)) {
+            ?>
+            <div class="review">
+                <div class="imgreview"><img src="<?=ADDRESS?>img/<?=$row1['image'] != '' ? $row1['image']:'no-image.jpg'?>" style="width: 140px;height: 113px;" /></div>
+                <div class="txtreview">
+                    <p class="colorreview"><?=$row1['title']?> /  <a href="<?=ADDRESS?>guestbook" style="vertical-align:top; margin:0 0 0 10px;">Guestbook</a></p>
+                    <p class="txtnamereview"><?=$row1['name']?></p>
+                    <p>
+                        <?=$row1['comment']?>
+                    </p>
+                </div> 
+                <div class="clear"></div>
+            </div>
+        <?php } ?>
+<?php } ?>
+
+
+
 </div>

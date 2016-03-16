@@ -284,7 +284,7 @@ if($_SESSION['admin_id'] == 'demo'){
                              
                                    <li class="<?= PAGE_CONTROLLERS == 'location' || $_GET['type'] == 'location'  ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> 
                                  <span
-                                            class="da-nav-icon"> <img src="../images/icon-location.png"
+                                     class="da-nav-icon"> <img src="images/icon-about.png"
                                                                   width="32" height="32">
                                         </span>    About us
                                     </a>
@@ -297,7 +297,7 @@ if($_SESSION['admin_id'] == 'demo'){
                              
                                  <li class="<?= PAGE_CONTROLLERS == 'gallery' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> 
                                  <span
-                                            class="da-nav-icon"> <img src="../images/icon-draft.png"
+                                     class="da-nav-icon"> <img src="images/icon-gallery.png"
                                                                   width="32" height="32">
                                         </span>จัดการ Gallery
                                     </a> 
@@ -309,18 +309,18 @@ if($_SESSION['admin_id'] == 'demo'){
                                
                                   
                                    <li class="<?= PAGE_CONTROLLERS == 'programs' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> <span
-                                            class="da-nav-icon"> <img src="../images/icon-plan.png" 
+                                               class="da-nav-icon"> <img src="images/icon-program.png" 
                                                                   width="32" height="32">
                                         </span> จัดการ Program
                                     </a>
                                     <ul>
-                                     <li class="<?= PAGE_CONTROLLERS == 'programs'  ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>programs">program</a></li>
+                                     <li class="<?= PAGE_CONTROLLERS == 'programs'  ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>programs">Program</a></li>
        
      
                                     </ul>
                                 </li>
                                  <li class="<?= PAGE_CONTROLLERS == 'guestbook' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> <span
-                                            class="da-nav-icon"> <img src="../images/icon-plan.png" 
+                                             class="da-nav-icon"> <img src="images/icon-people.png" 
                                                                   width="32" height="32">
                                         </span> จัดการ Guestbook
                                     </a>

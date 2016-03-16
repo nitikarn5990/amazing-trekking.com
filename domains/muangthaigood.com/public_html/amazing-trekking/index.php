@@ -2,7 +2,6 @@
 session_start();
 
 include_once($_SERVER["DOCUMENT_ROOT"] . '/lib/application.php');
-
 ?>
 
 <?php
@@ -18,15 +17,13 @@ if (PAGE_CONTROLLERS == 'gallery') {
         <title>Amazing  private  tour</title>
         <meta name="description" content="Amazing  private  tour" />
         <meta name="keywords" content="Amazing  private  tour" />
-
-        <link href="<?= ADDRESS ?>style.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width" />
         <link rel="shortcut icon" href="<?= ADDRESS ?>images/icon.png" />
+        <link href="<?= ADDRESS ?>style.css" rel="stylesheet" type="text/css" />
+           <link rel="stylesheet" href="<?= ADDRESS ?>dist/slippry.css" />
+
         <script src="<?= ADDRESS ?>js/jquery.min.js"></script>
         <script src="<?= ADDRESS ?>dist/slippry.min.js"></script>
-        <script src="<?= ADDRESS ?>js/cabin;source-sans-pro_n2,i2,n3,n4,n6,n7,n9.js"></script>
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="<?= ADDRESS ?>dist/slippry.css" />
-
         <script src="<?= ADDRESS ?>plugins/verify.notify.min.js"></script>
 
         <script src='https://www.google.com/recaptcha/api.js?hl=en'></script>
@@ -51,7 +48,7 @@ if (PAGE_CONTROLLERS == 'gallery') {
             .da-message.error {
                 background-color: #F2DEDE;
                 background-image: url(admin/assets/images/message-error.png);
-                   border-color: rgba(235, 151, 155, 0.48);
+                border-color: rgba(235, 151, 155, 0.48);
                 color: #9b4449;
             }
         </style>
@@ -63,12 +60,12 @@ if (PAGE_CONTROLLERS == 'gallery') {
                 <div id="logo"><a href=""><img src="<?= ADDRESS ?>images/logo.png" width="86" height="96" /></a></div>
                 <div id="menu">
                     <ul>
-                        <li><a href="<?= ADDRESS ?>index" title="Home">Home</a></li>
-                        <li><a href="<?= ADDRESS ?>about" title="About Us">About Us</a></li>
-                        <li><a href="<?= ADDRESS ?>programs" title="Programs">Programs</a></li>
-                        <li><a href="<?= ADDRESS ?>guestbook" title="Guestbook">Guestbook</a></li>
-                        <li><a href="<?= ADDRESS ?>gallery" title="Gallery">Gallery</a></li>
-                        <li><a href="<?= ADDRESS ?>contact" title="Contact Us">Contact Us</a></li>
+                        <li><a href="<?= ADDRESS ?>" class="<?= PAGE_CONTROLLERS == '' ? 'active' : '' ?>" title="Home">Home</a></li>
+                        <li><a href="<?= ADDRESS ?>about" class="<?= PAGE_CONTROLLERS == 'about' ? 'active' : '' ?>" title="About Us">About Us</a></li>
+                        <li><a href="<?= ADDRESS ?>programs" class="<?= PAGE_CONTROLLERS == 'programs' ? 'active' : '' ?>" title="Programs">Programs</a></li>
+                        <li><a href="<?= ADDRESS ?>guestbook" class="<?= PAGE_CONTROLLERS == 'guestbook' ? 'active' : '' ?>" title="Guestbook">Guestbook</a></li>
+                        <li><a href="<?= ADDRESS ?>gallery" class="<?= PAGE_CONTROLLERS == 'gallery' ? 'active' : '' ?>" title="Gallery">Gallery</a></li>
+                        <li><a href="<?= ADDRESS ?>contact" class="<?= PAGE_CONTROLLERS == 'contact' ? 'active' : '' ?>" title="Contact Us">Contact Us</a></li>
                     </ul>
                 </div>
             </div>

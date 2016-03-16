@@ -7,40 +7,16 @@
         <meta name="keywords" content="Gallery Amazing  private  tour" />
         <link href="style.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="images/icon.png">
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-            <script src="dist/slippry.min.js"></script>
+       
+             <script src="<?= ADDRESS ?>js/jquery.min.js"></script>
             <script src="//use.edgefonts.net/cabin;source-sans-pro:n2,i2,n3,n4,n6,n7,n9.js"></script>
             <meta name="viewport" content="width=device-width">
-                <link rel="stylesheet" href="dist/slippry.css">
+                <link rel="stylesheet" href="dist/slippry.css" />
                     <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
                     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-                    <script type="text/javascript" src="js/prototype.lite.js"></script>
-                    <script type="text/javascript" src="js/moo.fx.js"></script>
-                    <script type="text/javascript" src="js/litebox-1.0.js"></script>
-                    </head>
-                    <body  onload="initLightbox()">
-                        <div id="header">
-                            <div id="menu-logo">
-                                <div id="logo"><a href=""><img src="images/logo.png" width="86" height="96" /></a></div>
-                                <div id="menu">
-                                    <ul>
-                                        <li><a href="index.html" title="Home">Home</a></li>
-                                        <li><a href="about.html" title="About Us">About Us</a></li>
-                                        <li><a href="programs.html" title="Programs">Programs</a></li>
-                                        <li><a href="guestbook.html" title="Guestbook">Guestbook</a></li>
-                                        <li><a href="gallery.html" title="Gallery">Gallery</a></li>
-                                        <li><a href="contact.html" title="Contact Us">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div id="slide">
-                                <article class="demo_block">
-                                    <ul id="demo1" style="list-style:none; position:0; margin:0; width:100%;">
-                                        <li><a href="#slide1"><img src="img/slide.jpg" /></a></li>
-                                        <li><a href="#slide1"><img src="img/slide.jpg" /></a></li>
-                                    </ul>
-                                </article>
-                                <script>
+                 <script type="text/javascript" src="<?=ADDRESS?>js/litebox-1.0.js"></script>
+                     <script src="<?=ADDRESS?>dist/slippry.min.js"></script>
+                             <script>
                                     $(function () {
                                         var demo1 = $("#demo1").slippry({
                                             transition: 'fade',
@@ -81,6 +57,30 @@
                                         });
                                     });
                                 </script>
+                    </head>
+                    <body  onload="initLightbox()">
+                        <div id="header">
+                            <div id="menu-logo">
+                                <div id="logo"><a href=""><img src="images/logo.png" width="86" height="96" /></a></div>
+                                <div id="menu">
+                                    <ul>
+                                        <li><a href="index.html" title="Home">Home</a></li>
+                                        <li><a href="about.html" title="About Us">About Us</a></li>
+                                        <li><a href="programs.html" title="Programs">Programs</a></li>
+                                        <li><a href="guestbook.html" title="Guestbook">Guestbook</a></li>
+                                        <li><a href="gallery.html" title="Gallery">Gallery</a></li>
+                                        <li><a href="contact.html" title="Contact Us">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="slide">
+                                <article class="demo_block">
+                                    <ul id="demo1" style="list-style:none; position:0; margin:0; width:100%;">
+                                        <li><a href="#slide1"><img src="img/slide.jpg" /></a></li>
+                                        <li><a href="#slide1"><img src="img/slide.jpg" /></a></li>
+                                    </ul>
+                                </article>
+                       
                             </div>
                             <div id="slidebar-left">
                                 <div><iframe width="239" height="143" src="https://www.youtube.com/embed/UouU4_-dWlc" frameborder="0" allowfullscreen></iframe></div>
@@ -119,6 +119,7 @@
                                 <p>By KALU Tel.+668-4808-7663  E-mail: kaluguide@yahoo.co.th</p>
                             </div>
                         </div>
-                        </div>
+             
+               
                     </body>
                     </html>

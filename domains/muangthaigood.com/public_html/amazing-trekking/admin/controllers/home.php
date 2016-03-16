@@ -370,16 +370,16 @@ if ($_GET['home_files_id'] != '') {
                              <div class="da-form-row">
                                 <label class="da-form-label">รายละเอียดแบบย่อ<span class="required">*</span></label>
                                 <div class="da-form-item large">
-                                    <textarea name="home_detail" id="home_detail" class="span12 tinymce required"><?php echo ($home->GetPrimary() != '') ? $home->GetValue('home_shortdetail') : ''; ?></textarea>
-                                    <label for="home_detail" generated="true" class="error" style="display:none;"></label>
+                                    <textarea name="home_shortdetail" id="home_detail" class="span12 tinymce required"><?php echo ($home->GetPrimary() != '') ? $home->GetValue('home_shortdetail') : ''; ?></textarea>
+                                    <label for="home_shortdetail" generated="true" class="error" style="display:none;"></label>
                                 </div>
                             </div>
 
                             <div class="da-form-row">
                                 <label class="da-form-label">รายละเอียดแบบเต็ม<span class="required">*</span></label>
                                 <div class="da-form-item large">
-                                    <textarea name="home_shortdetail" id="home_shortdetail" class="span12 tinymce required"><?php echo ($home->GetPrimary() != '') ? $home->GetValue('home_detail') : ''; ?></textarea>
-                                    <label for="home_shortdetail" generated="true" class="error" style="display:none;"></label>
+                                    <textarea name="home_detail" id="home_shortdetail" class="span12 tinymce required"><?php echo ($home->GetPrimary() != '') ? $home->GetValue('home_detail') : ''; ?></textarea>
+                                    <label for="home_detail" generated="true" class="error" style="display:none;"></label>
                                 </div>
                             </div>
 

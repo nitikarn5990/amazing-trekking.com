@@ -84,20 +84,7 @@ if ($_POST['submit_bt'] == 'Post Comment') {
 
     Alert(GetAlert('success'), 'success');
     ?>
-    <?php
-    $sql1 = "SELECT * FROM " . $guestbook->getTbl() . " ORDER BY id DESC";
-    $query1 = $db->Query($sql1);
-    $numRow1 = $db->NumRows($query1);
-    if ($numRow1 > 0) {
-
-        while ($row1 = $db->FetchArray($query1)) {
-            ?>
-         
-            <?php
-            $numRow1--;
-        }
-        ?>
-    <?php } ?>
+  
 
     <!-- pagination -->
 
@@ -106,8 +93,9 @@ if ($_POST['submit_bt'] == 'Post Comment') {
 
     $objQuery = $db->Query($strSQL);
     $Num_Rows = $db->NumRows($objQuery);
+    $numRow = $Num_Rows;
 
-    $Per_Page = 1;   // Per Page
+    $Per_Page = 5;   // Per Page
 
     $Page = $_GET["Page"];
     if (!$_GET["Page"]) {
@@ -136,7 +124,7 @@ if ($_POST['submit_bt'] == 'Post Comment') {
         ?>
      <div class="comment-box">
 
-                <p class="comment-number"><b>Comment #<?= $Num_Rows--; ?></b></p>
+                <p class="comment-number"><b>Comment #<?= $objResult['id']; ?></b></p>
                 <div class="clear"></div>
                 <div class="comment-name"> <?= $objResult['name'] ?> </div>
                 <p class="comment-date">  <?= $functions->ShowDay($objResult['created_at']) . ',' . $functions->ShowDateEngTime($objResult['created_at']) ?></p>
@@ -160,8 +148,6 @@ if ($_POST['submit_bt'] == 'Post Comment') {
         <?php
     }
     ?>
-
-
     <div style="font-weight:bold;">
         <br>
         Total <?php echo $Num_Rows; ?> Record 
@@ -172,7 +158,7 @@ if ($_POST['submit_bt'] == 'Post Comment') {
         $pages->mid_range = 10;
         $pages->current_page = $Page;
         $pages->default_ipp = $Per_Page;
-        $pages->url_next = ADDRESS_CONTROL . "news&Page=";
+        $pages->url_next = ADDRESS_CONTROL . "guestbook&Page=";
 
         $pages->paginate();
 
