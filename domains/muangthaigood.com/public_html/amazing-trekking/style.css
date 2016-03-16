@@ -36,3 +36,4 @@ h1{ font:16px bold Arial, Helvetica, sans-serif; color:#1c4e13;}
 a.active{
     color: #fde305 !important;
 }
+.bordered { border:1px solid #aaa; width:210px; margin:10px;}

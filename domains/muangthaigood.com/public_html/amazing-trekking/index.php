@@ -4,12 +4,7 @@ session_start();
 include_once($_SERVER["DOCUMENT_ROOT"] . '/lib/application.php');
 ?>
 
-<?php
-if (PAGE_CONTROLLERS == 'gallery') {
-    include 'gallery.php';
-    die();
-}
-?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -25,6 +20,8 @@ if (PAGE_CONTROLLERS == 'gallery') {
         <script src="<?= ADDRESS ?>js/jquery.min.js"></script>
         <script src="<?= ADDRESS ?>dist/slippry.min.js"></script>
         <script src="<?= ADDRESS ?>plugins/verify.notify.min.js"></script>
+        
+         <link rel="stylesheet" href="<?= ADDRESS ?>src/css/lightbox.css" />
 
         <script src='https://www.google.com/recaptcha/api.js?hl=en'></script>
         <style>

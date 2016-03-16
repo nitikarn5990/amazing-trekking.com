@@ -118,7 +118,7 @@ if ($_POST['submit_bt'] == 'Post Comment') {
     $strSQL .=" order  by id ASC LIMIT $Page_Start , $Per_Page";
     $objQuery = mysql_query($strSQL);
     ?>
-
+    <h1>Guestbook Amazing  private  tour</h1>
     <?php
     while ($objResult = $db->FetchArray($objQuery)) {
         ?>
@@ -129,7 +129,7 @@ if ($_POST['submit_bt'] == 'Post Comment') {
                 <div class="comment-name"> <?= $objResult['name'] ?> </div>
                 <p class="comment-date">  <?= $functions->ShowDay($objResult['created_at']) . ',' . $functions->ShowDateEngTime($objResult['created_at']) ?></p>
                 <p class="comment-title"> <?= $objResult['title'] ?></p>
-                <div  style=" padding: 10px;">
+                <div>
                     <p class="comment-detail">
                     <ul>
                         <li>
@@ -194,6 +194,7 @@ if ($_POST['submit_bt'] == 'Post Comment') {
 
         </div>
     </form>
+       <?php include_once  'inc_footer.php';?>
 </div>
 <style>
 

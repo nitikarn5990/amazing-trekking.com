@@ -6,18 +6,18 @@ if ($_COOKIE['user'] == '') {
     header('location:' . ADDRESS_ADMIN . 'login.php');
 }
 if ($_SESSION ['admin_id'] != "") {
-
+    
 } else {
     header('location:' . ADDRESS_ADMIN . 'login.php');
 }
 
 
-if($_SESSION['admin_id'] == 'demo'){
-	if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_GET['action'] == 'del'){
-			SetAlert('DEMO MODE ไม่สามารถกระทำรายการได้');
-			header('location:'.ADDRESS_ADMIN_CONTROL .'demo'); 
-			exit();
-	}
+if ($_SESSION['admin_id'] == 'demo') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_GET['action'] == 'del') {
+        SetAlert('DEMO MODE ไม่สามารถกระทำรายการได้');
+        header('location:' . ADDRESS_ADMIN_CONTROL . 'demo');
+        exit();
+    }
 }
 ?>
 <html lang="en">
@@ -75,7 +75,7 @@ if($_SESSION['admin_id'] == 'demo'){
         <script src="assets/jui/js/jquery-ui-1.9.2.min.js"></script>
         <script src="assets/jui/jquery.ui.timepicker.min.js"></script>
         <script src="assets/jui/jquery.ui.touch-punch.min.js"></script>
-       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
         <!-- JS Plugins -->
 
@@ -235,7 +235,7 @@ if($_SESSION['admin_id'] == 'demo'){
                             </div>
                             <div id="da-header-button-container" >
                                 <ul>
-                                  
+
                                     <li class="da-header-button-wrap">
                                         <div class="da-header-button">
                                             <a href="javascript:void(0)"
@@ -268,72 +268,72 @@ if($_SESSION['admin_id'] == 'demo'){
                         <!-- Main Navigation -->
                         <div id="da-main-nav" class="btn-container">
                             <ul>
-                                <li class="<?= PAGE_CONTROLLERS == 'slides' || $_GET['type'] == 'index' ||  PAGE_CONTROLLERS == 'home' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> <span
+                                <li class="<?= PAGE_CONTROLLERS == 'slides' || $_GET['type'] == 'index' || PAGE_CONTROLLERS == 'home' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> <span
                                             class="da-nav-icon"> <img src="../images/icon-home.png"
                                                                   width="32" height="32">
                                         </span> หน้าแรก
                                     </a>
                                     <ul>
                                         <li class="<?= PAGE_CONTROLLERS == 'slides' ? 'active' : '' ?>"><a href="<?php echo ADDRESS_ADMIN_CONTROL ?>slides">ภาพสไลด์</a></li>
-                                      
+
                                         <li class="<?= PAGE_CONTROLLERS == 'home' ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>home&action=edit&id=1">รายละเอียด</a></li>
-                    
+
 
                                     </ul>
                                 </li>
-                             
-                                   <li class="<?= PAGE_CONTROLLERS == 'location' || $_GET['type'] == 'location'  ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> 
-                                 <span
-                                     class="da-nav-icon"> <img src="images/icon-about.png"
+
+                                <li class="<?= PAGE_CONTROLLERS == 'about' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> 
+                                        <span
+                                            class="da-nav-icon"> <img src="images/icon-about.png"
                                                                   width="32" height="32">
                                         </span>    About us
                                     </a>
                                     <ul>
-                                             <li class="<?= PAGE_CONTROLLERS == 'location' ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>location&action=edit&id=1">รายละเอียด</a></li>
-                                             
+                                        <li class="<?= PAGE_CONTROLLERS == 'about' ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>about&action=edit&id=1">รายละเอียด</a></li>
+
 
                                     </ul>
                                 </li>
-                             
-                                 <li class="<?= PAGE_CONTROLLERS == 'gallery' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> 
-                                 <span
-                                     class="da-nav-icon"> <img src="images/icon-gallery.png"
+
+                                <li class="<?= PAGE_CONTROLLERS == 'gallery' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> 
+                                        <span
+                                            class="da-nav-icon"> <img src="images/icon-gallery.png"
                                                                   width="32" height="32">
                                         </span>จัดการ Gallery
                                     </a> 
                                     <ul>
-                                             <li class="<?= PAGE_CONTROLLERS == 'gallery' ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>gallery">Gallery</a></li>
+                                        <li class="<?= PAGE_CONTROLLERS == 'gallery' ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>gallery">Gallery</a></li>
 
                                     </ul> 
                                 </li>
-                               
-                                  
-                                   <li class="<?= PAGE_CONTROLLERS == 'programs' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> <span
-                                               class="da-nav-icon"> <img src="images/icon-program.png" 
+
+
+                                <li class="<?= PAGE_CONTROLLERS == 'programs' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> <span
+                                            class="da-nav-icon"> <img src="images/icon-program.png" 
                                                                   width="32" height="32">
                                         </span> จัดการ Program
                                     </a>
                                     <ul>
-                                     <li class="<?= PAGE_CONTROLLERS == 'programs'  ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>programs">Program</a></li>
-       
-     
+                                        <li class="<?= PAGE_CONTROLLERS == 'programs' ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>programs">Program</a></li>
+
+
                                     </ul>
                                 </li>
-                                 <li class="<?= PAGE_CONTROLLERS == 'guestbook' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> <span
-                                             class="da-nav-icon"> <img src="images/icon-people.png" 
+                                <li class="<?= PAGE_CONTROLLERS == 'guestbook' ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> <span
+                                            class="da-nav-icon"> <img src="images/icon-people.png" 
                                                                   width="32" height="32">
                                         </span> จัดการ Guestbook
                                     </a>
                                     <ul>
-                                     <li class="<?= PAGE_CONTROLLERS == 'guestbook'  ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>guestbook">Guestbook</a></li>
-       
-     
+                                        <li class="<?= PAGE_CONTROLLERS == 'guestbook' ? 'active' : '' ?>"><a  href="<?php echo ADDRESS_ADMIN_CONTROL ?>guestbook">Guestbook</a></li>
+
+
                                     </ul>
                                 </li>
-                           
-                                <li class="<?= PAGE_CONTROLLERS == 'contact' || PAGE_CONTROLLERS == 'contact_message'
-								|| $_GET['type'] == 'contact'
-								 ? 'active' : '' ?>"><a href="#"> <!-- Icon Container --> <span
+
+                                <li class="<?=
+                                PAGE_CONTROLLERS == 'contact' || PAGE_CONTROLLERS == 'contact_message' || $_GET['type'] == 'contact' ? 'active' : ''
+                                ?>"><a href="#"> <!-- Icon Container --> <span
                                             class="da-nav-icon"> <img src="../images/icon-contact.png"
                                                                   width="32" height="32">
                                         </span> ติดต่อเรา
@@ -459,7 +459,7 @@ if($_SESSION['admin_id'] == 'demo'){
     }
     .hidden{
         display: none !important;
-            
+
     }
     .active{
         background-color: #CCC;
